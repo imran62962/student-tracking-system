@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Add New Student</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/layouts/banner.css">
+
+	<!-- Add some simple CSS for styling -->
+	<style>
+		body {
+			font-family: 'Arial', sans-serif;
+			margin: 20px;
+		}
+
+		h1 {
+			color: #333;
+		}
+
+		form {
+			width: 300px;
+			margin: 20px 0;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 5px;
+		}
+
+		input {
+			width: 100%;
+			padding: 8px;
+			margin-bottom: 10px;
+			box-sizing: border-box;
+		}
+
+		button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px;
+			border: none;
+			cursor: pointer;
+			width: 100%;
+		}
+
+		button:hover {
+			background-color: #45a049;
+		}
+
+		a {
+			display: inline-block;
+			margin-top: 10px;
+			color: #333;
+			text-decoration: none;
+		}
+
+		a:hover {
+			color: #007BFF;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Add New Student</h1>
+	<!-- Thymeleaf form for adding a new student -->
+	<form th:action="@{/saveStudent}" th:object="${student}" method="post">
+		<!-- Input fields for student properties -->
+		<label>Name: <input type="text" th:field="*{name}" required /></label><br />
+		<label>Reg ID: <input type="text" th:field="*{studentId}" required /></label><br />
+		<label>Branch: <input type="text" th:field="*{branch}" required /></label><br />
+		<label>Year: <input type="text" th:field="*{year}" required /></label><br />
+		<label>MentorID: <input type="text" th:field="*{mentor}" required /></label><br />
+		<label>Admission Type: <input type="text" th:field="*{admissionType}" required /></label><br />
+		<button type="submit">Save</button>
+	</form>
+	<!-- Link to cancel and go back to the student list -->
+	<a th:href="@{/getAllStudents}">Cancel</a>
+</body>
+
+</html>

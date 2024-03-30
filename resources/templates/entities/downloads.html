@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>IT Department - BEC</title>
+	<link rel="icon" href="images/beclogo.png" type="image/jpeg" sizes="32x32 48x48">
+	<link rel="stylesheet" href="css/layouts/banner.css">
+
+
+
+
+</head>
+
+<body>
+	<img id="banner" src="images/banner.jpg" alt="Banner" />
+	<div th:replace="~{includes/layouts/headerTable :: headerTable}"></div>
+
+
+	<h1>Welcome to Downloads Section</h1>
+
+	<div th:replace="~{includes/layouts/about :: about}"></div>
+	<div th:replace="~{includes/layouts/footer :: footer}">
+</body>
+
+</html>

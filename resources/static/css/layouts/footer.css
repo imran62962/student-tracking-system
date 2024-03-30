@@ -1,0 +1,10 @@
+footer{
+	
+    background-color:rgb(71, 71, 75);
+    width: 100%;
+}
+footer p{
+	color: whitesmoke;
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	text-align: center;
+}

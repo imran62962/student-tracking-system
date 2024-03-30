@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Marks List</title>
+</head>
+<body>
+    <h2>Marks List</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Subject 1</th>
+                <th>Subject 2</th>
+                <th>Subject 3</th>
+                <th>Lab 1</th>
+                <th>Lab 2</th>
+                <th>Lab 3</th>
+                <th>Lab 4</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="mark : ${marks}">
+                <td th:text="${mark.id}"></td>
+                <td th:text="${mark.y20it101}"></td>
+                <td th:text="${mark.y20it102}"></td>
+                <td th:text="${mark.y20it103}"></td>
+                <td th:text="${mark.y20itl101}"></td>
+                <td th:text="${mark.y20itl102}"></td>
+                <td th:text="${mark.y20itl103}"></td>
+                <td th:text="${mark.y20itl104}"></td>
+                <td>
+                    <a th:href="@{/editMarks/{id}(id=${mark.id})}">Edit</a>
+                    <a th:href="@{deleteMarks/{id}(id=${mark.id})}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/addMarks">Add New Marks</a>
+</body>
+</html>

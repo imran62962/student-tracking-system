@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Marks List</title>
+    <link rel="stylesheet" href="css/layouts/banner.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        td a {
+            margin-right: 10px;
+            text-decoration: none;
+            padding: 5px;
+            color: #007BFF;
+        }
+
+        tbody tr:hover {
+            background-color: #ddd;
+        }
+
+        a.add-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #28a745;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a.add-link:hover {
+            color: #218838;
+        }
+        /*Details and summary tag styles*/
+        summary {
+            color: brown;
+            font-size: 20px;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Marks List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>RegID</th>
+                <th>Subject 1</th>
+                <th>Subject 2</th>
+                <th>Subject 3</th>
+                <th>Lab 1</th>
+                <th>Lab 2</th>
+                <th>Lab 3</th>
+                <th>Lab 4</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="mark : ${marks}">
+                <td th:text="${mark.regId}"></td>
+                <td th:text="${mark.y20it101}"></td>
+                <td th:text="${mark.y20it102}"></td>
+                <td th:text="${mark.y20it103}"></td>
+                <td th:text="${mark.y20itl101}"></td>
+                <td th:text="${mark.y20itl102}"></td>
+                <td th:text="${mark.y20itl103}"></td>
+                <td th:text="${mark.y20itl104}"></td>
+                <td>
+                    <a href="#" th:href="@{'/editMarks/' + ${mark.id}}">Edit</a>
+                    <a href="#" th:href="@{'/deleteMarks/' + ${mark.id}}" onclick="return confirm('Are you sure you want to delete this mark?')">Delete</a>
+                </td>
+            </tr>
+            
+        </tbody>
+        </table>
+                <a th:href="@{/addMarks}" class="add-link">Add Marks for Another Student</a>    </table>
+
+
+</body>
+
+</html>

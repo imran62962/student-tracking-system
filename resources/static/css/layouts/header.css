@@ -1,0 +1,93 @@
+body {
+	margin: 0;
+
+}
+
+/*Details tag styles*/
+#detail-navbar {
+	/*position: -webkit-sticky;
+	position: sticky;
+	top: 0;                    to fix the nav at top */  
+	text-align: center;
+	background-color: lightgray;
+	border-radius: 20%;
+}
+
+summary {
+	font-family: Algerian,Arial Rounded MT Bold;
+	letter-spacing:2px;
+	color: darkslateblue;
+	font-weight: bolder;
+
+}
+
+/*Navbar tag styles*/
+#myStickyElement {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	background-color: #f2f2f2;
+	padding: 20px;
+	border: 1px solid #ddd;
+	margin-top: 50px;
+	/* Adjust as needed based on your layout */
+}
+
+navbar {
+	
+	background-color: lightgray;
+	padding: 15px;
+	display: flex;
+	border-radius: 3%;
+}
+
+.nav-list {
+	text-align: left;
+	flex-wrap: wrap;
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	margin: 2;
+	padding: 0;
+	flex-grow: 1;
+	/* Allow the list to grow and occupy available space */
+}
+
+.nav-list li {
+
+
+	margin: 0 0px 6px;
+	/*Adjust margin to create spacing between list items
+	border: 1px solid white; */
+}
+
+.nav-list li:hover {
+	background-color: rgba(0, 0, 0, 0.2);
+	/*	
+ border: 2px solid #333;
+    transition: border-width 0.3s ease-in-out;
+*/
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+	transition: box-shadow 0.3s ease-in-out;
+
+}
+
+.nav-list a {
+
+	text-decoration: none;
+	color: rgb(128, 64, 0);
+	font-weight: bold;
+}
+
+/*
+@media screen and (max-width: 400px) {
+  .nav-list {
+    flex-direction: column;
+  }
+
+  .nav-list li {
+    margin: 0;
+    margin-bottom: 10px;  Add some spacing between list items 
+  }
+}
+*/

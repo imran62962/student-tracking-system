@@ -1,0 +1,30 @@
+<!--<test>
+	<link rel="stylesheet" href="css/body.css">
+	<script>
+		function btnClick() {
+			let h1 = document.getElementById("test-h1");
+			h1.style.color="blue";
+		}
+
+
+	</script>
+
+	<h1 id="test-h1">
+		Test Component
+	</h1>
+	<button id="test-btn1" onclick="btnClick()" ; ondblclick="btnDblClick()">
+		mutton
+	</button>
+	
+
+</test>-->
+<!-- Your Thymeleaf template -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+    <!-- Include the fragment -->
+    <h1>test</h1>
+    <div th:replace="temp :: temp"></div>
+
+</body>
+</html>

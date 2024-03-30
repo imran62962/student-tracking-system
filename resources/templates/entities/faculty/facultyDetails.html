@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>IT Department - BEC</title>
+	<link rel="icon" href="images/beclogo.png" type="image/jpeg" sizes="32x32 48x48">
+	<link rel="stylesheet" href="css/layouts/banner.css">
+
+	<style>
+		/* Add styles directly in the HTML file */
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 1;
+			}
+		}
+
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		th,
+		td {
+			padding: 12px;
+			text-align: left;
+		}
+
+		thead {
+			background-color: rgb(143, 143, 143);
+		}
+
+		tbody tr {
+			background-color: white;
+			/* Red for even rows */
+		}
+
+
+
+		tbody tr {
+			transition: background-color 0.3s ease;
+		}
+
+		tbody tr:hover {
+			background-color: rgb(255, 255, 128);
+			/* Hover color for all rows */
+		}
+
+		/* Apply fade-in animation to table rows */
+		tbody tr {
+			opacity: 0;
+			animation: fadeIn 0.5s ease-in-out forwards;
+		}
+	</style>
+
+</head>
+
+<body>
+	<img id="banner" src="images/banner.jpg" alt="Banner" />
+	<div th:replace="~{includes/layouts/headerTable :: headerTable}"></div>
+	<div th:replace="~{entities/faculty/facultyHeader :: facultyHeader}"></div>
+
+	<h1>Faculty Section</h1>
+	<h1>Faculty List</h1>
+	<table border="1" class="animated-table">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Registration ID</th>
+				<th>Branch</th>
+				<th>Designation</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- Thymeleaf syntax for iterating through the list of faculty -->
+			<tr th:each="faculty : ${faculties}">
+				<td th:text="${faculty.id}"></td>
+				<td th:text="${faculty.name}"></td>
+				<td th:text="${faculty.regid}"></td>
+				<td th:text="${faculty.branch}"></td>
+				<td th:text="${faculty.designation}"></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div th:replace="~{includes/layouts/footer :: footer}"></div>
+</body>
+
+</html>

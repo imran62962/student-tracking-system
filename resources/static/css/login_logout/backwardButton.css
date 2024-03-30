@@ -1,0 +1,29 @@
+
+        .arrow-button {
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    color: #f4f4f4;
+  }
+  .arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+  .backward-button {
+    background-color: #f4f4f4;
+  }
+  .backward-arrow {
+    border-width: 10px 15px 10px 0;
+    border-color: transparent blue transparent transparent;
+  }
+  .backward-arrow:hover {
+    border-width: 10px 15px 10px 0;
+    border-color: transparent green transparent transparent;
+  }
+    

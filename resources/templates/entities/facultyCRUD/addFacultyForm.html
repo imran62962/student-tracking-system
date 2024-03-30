@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add New Faculty</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/layouts/banner.css">
+    <!-- Add some simple CSS for styling -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            width: 300px;
+            margin: 20px 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add New Faculty</h1>
+    <!-- Thymeleaf form for adding a new faculty -->
+    <form th:action="@{/saveFaculty}" th:object="${faculty}" method="post">
+        <!-- Input fields for faculty properties -->
+        <label>Name: <input type="text" th:field="*{name}" required /></label><br />
+        <label>Faculty ID: <input type="text" th:field="*{facultyId}" required /></label><br />
+        <label>Branch: <input type="text" th:field="*{branch}" required /></label><br />
+        <label>Designation: <input type="text" th:field="*{designation}" required /></label><br />
+        <button type="submit">Save</button>
+    </form>
+    <!-- Link to cancel and go back to the faculty list -->
+    <a th:href="@{/getAllFaculty}">Cancel</a>
+</body>
+</html>

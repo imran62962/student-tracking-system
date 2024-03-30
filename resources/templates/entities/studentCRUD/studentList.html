@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Student List</title>
+		<link rel="stylesheet" href="css/layouts/banner.css">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			font-family: 'Arial', sans-serif;
+			margin: 20px;
+		}
+
+		h1 {
+			color: #333;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-top: 20px;
+		}
+
+		th,
+		td {
+			border: 1px solid #ddd;
+			padding: 8px;
+			text-align: left;
+		}
+
+		th {
+			background-color: #f2f2f2;
+		}
+
+		td a {
+			margin-right: 10px;
+			text-decoration: none;
+			padding: 5px;
+			color: #007BFF;
+		}
+
+		tbody tr:hover {
+			background-color: #ddd;
+		}
+
+		a.add-link {
+			display: inline-block;
+			margin-top: 20px;
+			color: #28a745;
+			text-decoration: none;
+			font-weight: bold;
+		}
+
+		a.add-link:hover {
+			color: #218838;
+		}
+		/*Details and summary tag styles*/
+		summary{
+			color:brown;
+			font-size: 20px;
+			background-color: white;
+		}
+	</style>
+</head>
+
+<body>
+		<!--<img id="banner" src="images/banner.jpg" alt="Banner" />
+	<div th:replace="~{includes/layouts/headerTable :: headerTable}"></div>
+	<div th:replace="~{entities/studentCRUD/studentHeader :: studentHeader}"></div>-->
+
+
+	<h1>Student List</h1>
+	
+		<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Reg ID</th>
+				<th>Branch</th>
+				<th>Admission Type</th>
+				<th>Mentor ID</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="student : ${students}">
+				<td th:text="${student.id}"></td>
+				<td th:text="${student.name}"></td>
+				<td th:text="${student.studentId}"></td>
+				<td th:text="${student.branch}"></td>
+				<td th:text="${student.admissionType}"></td>
+				<td th:text="${student.mentor}"></td>
+
+			</tr>
+		</tbody>
+	</table>
+	
+	
+		<br><br><BR>
+			<!--	<div th:replace="~{includes/layouts/about :: about}"></div>
+
+		<div th:replace="~{includes/layouts/footer :: footer}"></div>-->
+
+</body>
+
+</html>

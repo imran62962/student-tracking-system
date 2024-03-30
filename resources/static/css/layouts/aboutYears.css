@@ -1,0 +1,52 @@
+ #aboutYears{
+	 
+	 
+	 
+ }
+ #aboutYears h1{
+	
+	 
+ }
+ .years-container {
+	 
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
+      gap: 20px; /* Adjust the gap between images */
+      padding: 40px;
+    }
+    .years-container img {
+      width: 80%;
+      height: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+      border: 10px solid #ddd; /* Add a border for better visualization */
+      border-radius: 20%; /* Add border-radius for rounded corners */
+      padding: 20px;
+      
+    }
+  
+
+
+.years-container img:hover{
+  
+    box-shadow: 0 0 20px rgba(0, 0, 0, 2); /* Adjust values as needed */
+
+}
+
+
+@media screen and (max-width: 600px){
+	 .years-container {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr); /* Adjust the number of columns as needed */
+      
+    }
+    .years-container img {
+      width: 80%;
+      height: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+      border: 10px solid #ddd; /* Add a border for better visualization */
+      border-radius: 20%; /* Add border-radius for rounded corners */
+      padding: 20px;
+    }
+ 
+    
+}

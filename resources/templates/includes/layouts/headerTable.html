@@ -1,0 +1,28 @@
+<headerTable class="headerTable">
+	<link rel="stylesheet" href="css/layouts/headerTable.css">
+	<details id="detail-navbar">
+		<summary>Department Of Information Technology</summary></details>
+		<table>
+        <thead>
+            <tr >
+                <th onclick="navigateTo('/')">Home</th>
+                <th onclick="navigateTo('/studentSection')">Student Info</th>
+                <th onclick="navigateTo('/facultySection')">Faculty Info</th>
+                <th onclick="navigateTo('/examinationCell')">Examination Cell</th>
+                <th onclick="navigateTo('/downloads')">Downloads</th>
+                <th onclick="navigateTo('/events')">Events</th>
+                <th onclick="navigateTo('/test')">Test</th>
+                <!-- Add more columns if needed -->
+            </tr>
+        </thead>
+    </table>
+
+		</table>
+		<script>
+    function navigateTo(url) {
+        window.location.href = url;
+    }
+</script>
+	
+</headerTable>
+
