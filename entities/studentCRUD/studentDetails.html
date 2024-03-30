@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<link rel="stylesheet" href="css/layouts/banner.css">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            overflow-x: auto;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a.back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a.back-link:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+   	<!-- <img id="banner" src="images/banner.jpg" alt="Banner" />
+		<div th:replace="~{includes/layouts/headerTable :: headerTable}"></div>
+		<div th:replace="~{entities/studentCRUD/studentHeader :: studentHeader}"></div>-->
+	<h1>Student Details</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <td th:text="${student.id}"></td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td th:text="${student.name}"></td>
+        </tr>
+        <tr>
+            <th>Reg ID</th>
+            <td th:text="${student.studentId}"></td>
+        </tr>
+        <tr>
+            <th>Branch</th>
+            <td th:text="${student.branch}"></td>
+        </tr>
+        <tr>
+            <th>Admission Type</th>
+            <td th:text="${student.admissionType}"></td>
+        </tr>
+        <tr>
+            <th>Mentor ID</th>
+            <td th:text="${student.mentor}"></td>
+        </tr>
+    </table>
+	<!--<div th:replace="~{includes/layouts/about :: about}"></div>
+		
+		
+		
+		<div th:replace="~{includes/layouts/footer :: footer}"></div>-->
+</body>
+</html>

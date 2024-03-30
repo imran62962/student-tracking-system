@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Page</title>
+    <!-- Add your CSS styles or link to external stylesheets here -->
+</head>
+<body>
+
+<div th:fragment="header">
+    <h1>Error Page</h1>
+</div>
+
+<div th:fragment="content" th:switch="${errorCode}">
+    <p th:case="400">Bad Request (400) - The request was malformed or invalid.</p>
+    <p th:case="401">Unauthorized (401) - Authentication is required and has failed or has not been provided.</p>
+    <p th:case="403">Forbidden (403) - Access to the requested resource is forbidden.</p>
+    <p th:case="404">Not Found (404) - The requested resource could not be found on the server.</p>
+    <p th:case="500">Internal Server Error (500) - An unexpected condition was encountered by the server.</p>
+    <p th:case="503">Service Unavailable (503) - The server is not ready to handle the request.</p>
+    <p th:case="Unknown">Unknown Error - An unknown error occurred.</p>
+    <!-- Add more cases as needed -->
+
+    <p th:case="generic">Generic Error - An error occurred.</p>
+</div>
+
+<div th:replace="fragments :: header"></div>
+<div th:replace="fragments :: content"></div>
+
+<!-- Add your additional HTML content or scripts here -->
+
+</body>
+</html>

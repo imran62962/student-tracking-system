@@ -1,0 +1,24 @@
+<facultyHeader class="headerTable">
+	<link rel="stylesheet" href="css/layouts/headerTable.css">
+	
+		<table>
+        <thead>
+            <tr >
+                <th onclick="navigateTo('/getAllFaculty')">List All Faculty</th>
+                <th onclick="navigateTo('#')">Faculty Tasks</th>
+                <th onclick="navigateTo('#')">Faculty Activities</th>
+                <th onclick="navigateTo('#')">Others</th>
+                <!-- Add more columns if needed -->
+            </tr>
+        </thead>
+    </table>
+
+		</table>
+		<script>
+    function navigateTo(url) {
+        window.location.href = url;
+    }
+</script>
+	
+</facultyHeader>
+

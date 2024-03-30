@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Add New Marks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/layouts/banner.css">
+
+    <!-- Add some simple CSS for styling -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            width: 300px;
+            margin: 20px 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #007BFF;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Add New Marks</h1>
+    <!-- Thymeleaf form for adding new marks -->
+    <form th:action="@{/saveMarks}" th:object="${marks}" method="post">
+        <!-- Input fields for mark properties -->
+        <label>Regid: <input type="text" th:field="*{regId}" required /></label><br />
+        
+        <label>Subject 1: <input type="text" th:field="*{y20it101}" required /></label><br />
+        <label>Subject 2: <input type="text" th:field="*{y20it102}" required /></label><br />
+        <label>Subject 3: <input type="text" th:field="*{y20it103}" required /></label><br />
+        <label>Lab 1: <input type="text" th:field="*{y20itl101}" required /></label><br />
+        <label>Lab 2: <input type="text" th:field="*{y20itl102}" required /></label><br />
+        <label>Lab 3: <input type="text" th:field="*{y20itl103}" required /></label><br />
+        <label>Lab 4: <input type="text" th:field="*{y20itl104}" required /></label><br />
+        <button type="submit">Save</button>
+    </form>
+    <!-- Link to cancel and go back to the marks list -->
+    <a th:href="@{/getMarks}">Cancel</a>
+</body>
+
+</html>

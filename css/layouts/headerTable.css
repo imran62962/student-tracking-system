@@ -1,0 +1,143 @@
+body {
+	margin: 0;
+	background-color: #C7C8CC;
+
+}
+
+/*Details tag styles*/
+#detail-navbar {
+	list-style: none;
+
+	text-align: left;
+	background-color: rgb(132, 132, 138);
+	border-radius: 0%;
+	font-size: larger;
+	height: 30px;
+
+}
+
+#detail-navbar summary {
+	display: block;
+
+	text-align: center;
+	font-family: Algerian, 'Times New Roman', Times, serif;
+	letter-spacing: 2px;
+	color: rgb(0, 0, 0);
+	font-weight: bolder;
+
+}
+
+/*.headerTable tag styles*/
+
+.headerTable table {
+	position: sticky;
+	top: 0;
+
+	width: 100%;
+	border-collapse: collapse;
+	margin: 0;
+	background-color: rgb(132, 132, 138);
+}
+
+.headerTable th {
+	border: 1px solid lightgray;
+	padding: 8px;
+	text-align: center;
+	margin: 0;
+	
+}
+
+.headerTable th {
+	background-color: rgb(132, 132, 138);
+	margin: 0;
+	/* Remove margin */
+
+}
+
+.headerTable thead tr {
+
+	text-decoration: none;
+	color: rgb(0, 0, 0);
+	font-weight: bold;
+}
+
+.headerTable th:hover {
+	/*	background-color: rgb(201, 201, 201);
+		
+ border: 2px solid #333;
+    transition: border-width 0.3s ease-in-out;
+*/
+	box-shadow: 0 0 30px rgb(201, 201, 201);
+	transition: box-shadow 0.3s ease-in-out;
+
+}
+
+@media screen and (max-width: 1200px) {
+	.headerTable tr {
+		display: flex;
+		flex-wrap: wrap;
+
+		margin-right: 0;
+	}
+
+	.headerTable th,
+	.headerTable td {
+		width: 23%;
+		/* Adjust based on the number of columns */
+		box-sizing: border-box;
+		margin: 0;
+	}
+}
+
+@media screen and (max-width: 900px) {
+
+	.headerTable th,
+	.headerTable td {
+		width: 31.3%;
+		/* Adjust based on the number of columns */
+		margin: 0;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	#detail-navbar {
+
+		position: -ms-page;
+		text-align: center;
+		background-color: rgb(132, 132, 138);
+		border-radius: 0%;
+		font-size: 17px;
+		height: 30px;
+
+	}
+
+	.headerTable th,
+	.headerTable td {
+		width: 48%;
+		/* Adjust based on the number of columns */
+		margin: 0;
+	}
+
+	.headerTable table {
+		position:static ;
+		
+
+		width: 100%;
+		border-collapse: collapse;
+		margin: 0;
+		background-color: rgb(132, 132, 138);
+	}
+
+	.headerTable td:hover {}
+}
+
+@media screen and (max-width: 400px) {
+
+	.headerTable th,
+	.headerTable td {
+		width: 100%;
+		margin: 0;
+	}
+
+	
+}

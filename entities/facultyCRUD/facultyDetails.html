@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Faculty Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/layouts/banner.css">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            overflow-x: auto;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a.back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a.back-link:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Faculty Details</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <td th:text="${faculty.id}"></td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td th:text="${faculty.name}"></td>
+        </tr>
+        <tr>
+            <th>Faculty ID</th>
+            <td th:text="${faculty.facultyId}"></td>
+        </tr>
+        <tr>
+            <th>Branch</th>
+            <td th:text="${faculty.branch}"></td>
+        </tr>
+        <tr>
+            <th>Designation</th>
+            <td th:text="${faculty.designation}"></td>
+        </tr>
+    </table>
+    <a class="back-link" th:href="@{/getAllFaculty}">Back to Faculty List</a>
+</body>
+</html>

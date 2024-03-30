@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SignUp Page</title>
+	<link rel="stylesheet" href="css/login_logout/signupForm.css" />
+	<link rel="stylesheet" href="css/backwardButton.css" />
+	
+	
+
+
+</head>
+
+<body>
+	<a href="/" style="text-decoration: none;">
+		<button class="arrow-button backward-button" onclick="btnClick()">
+			<div class="arrow backward-arrow"></div>
+		</button>
+	</a>
+	<div class="container">
+
+		<div class="card">
+			<div class="card-header">
+				<h3>Sign Up</h3>
+			</div>
+			<div class="card-body">
+				<form action="/signup" method="post" th:object="${user}" onsubmit="return validateForm()">
+					<div class="form-group">
+						<label for="name">Name:</label>
+						<input type="text" id="name" name="name" th:field="*{name}" required>
+					</div>
+
+					<div class="form-group">
+						<label for="email">Email:</label>
+						<input type="email" id="email" name="email" th:field="*{email}" required>
+						<div class="error-message" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">
+
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="mobile">Mobile Number:</label>
+						<input type="tel" id="mobile" name="mobile" th:field="*{mobile}"  maxlength="10" minlength="10" required>
+					</div>
+
+					
+
+					<div class="form-group">
+						<label for="password">Password:</label>
+						<input type="password" id="password" name="password" minlength="4" th:field="*{password}"
+							required>
+					</div>
+
+					<div class="form-group">
+						<button type="submit">Submit</button>
+						<button type="button" class="secondary" onclick="resetForm()">Cancel</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script th:inline="javascript">
+		function validateForm() {
+			// Implement your form validation logic here
+			return true; // Return false if validation fails
+		}
+
+		function resetForm() {
+			document.getElementById("signupForm").reset();
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>IT Department - BEC</title>
+	<link rel="icon" href="images/beclogo.png" type="image/jpeg" sizes="32x32 48x48">
+	<link rel="stylesheet" href="css/layouts/banner.css">
+
+	
+
+
+</head>
+
+
+	<img id="banner" src="images/banner.jpg" alt="Banner" />
+	<div th:replace="~{includes/layouts/headerTable :: headerTable}"></div>
+
+
+	<h1>Student Section</h1>
+	<h1>Student List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Registration ID</th>
+              
+                <th>Branch</th>
+                <th>Admission Type</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Thymeleaf syntax for iterating through the list of students -->
+            <tr th:each="student : ${students}">
+                <td th:text="${student.id}"></td>
+                <td th:text="${student.name}"></td>
+                <td th:text="${student.regid}"></td>
+                <td th:text="${student.branch}"></td>
+                <td th:text="${student.admissionType}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+	<div th:replace="~{includes/layouts/footer :: footer}">
+</body>
+
+</html>

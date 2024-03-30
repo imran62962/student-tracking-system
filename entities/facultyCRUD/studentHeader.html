@@ -1,0 +1,24 @@
+<studentHeader class="headerTable">
+	<link rel="stylesheet" href="css/layouts/headerTable.css">
+	
+		<table>
+        <thead>
+            <tr >
+                <th onclick="navigateTo('/getAllStudents')">List All Students</th>
+                <th onclick="navigateTo('#')">Student Activities</th>
+                <th onclick="navigateTo('#')">Student Marks</th>
+                <th onclick="navigateTo('#')">Student Attendance</th>
+                <!-- Add more columns if needed -->
+            </tr>
+        </thead>
+    </table>
+
+		</table>
+		<script>
+    function navigateTo(url) {
+        window.location.href = url;
+    }
+</script>
+	
+</studentHeader>
+

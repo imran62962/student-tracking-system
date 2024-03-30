@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <link rel="stylesheet" href="css/login_logout/signupForm.css" />
+    <link rel="stylesheet" href="css/backwardButton.css"/>
+    
+  </head>
+  <body>
+    <a href="/" style="text-decoration: none">
+      <button class="arrow-button backward-button" onclick="btnClick()">
+        <div class="arrow backward-arrow"></div>
+      </button>
+    </a>
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          <h3>Login</h3>
+        </div>
+        <div class="card-body">
+          <form
+            action="/customLogin"
+            method="post"
+            th:object="${user}"
+            onsubmit="return validateForm()"
+          >
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                th:field="*{email}"
+                required
+              />
+              <div
+                class="error-message"
+                th:if="${#fields.hasErrors('email')}"
+                th:errors="*{email}"
+              ></div>
+            </div>
+            <div class="form-group">
+              <label for="password">password:</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                th:field="*{password}"
+                required
+              />
+              <div
+                class="error-message"
+                th:if="${#fields.hasErrors('password')}"
+                th:errors="*{password}"
+              ></div>
+            </div>
+            <div class="form-group">
+              <button class="submitButton" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script th:inline="javascript">
+      function validateForm() {
+        // Implement your form validation logic here
+        return true; // Return false if validation fails
+      }
+    </script>
+  </body>
+</html>

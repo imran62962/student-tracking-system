@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Faculty List For Admin</title>
+    <link rel="stylesheet" href="css/layouts/banner.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tbody tr:hover {
+            background-color: aquamarine;
+        }
+
+        td a {
+            margin-right: 10px;
+            text-decoration: none;
+            padding: 5px;
+            color: #007BFF;
+        }
+
+        td a:hover {
+            background-color: #f2f2f2;
+        }
+
+        a.add-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #28a745;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a.add-link:hover {
+            color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Faculty List For Admin</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Faculty ID</th>
+                <th>Branch</th>
+                <th>Designation</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="faculty : ${faculties}">
+                <td th:text="${faculty.id}"></td>
+                <td th:text="${faculty.name}"></td>
+                <td th:text="${faculty.facultyId}"></td>
+                <td th:text="${faculty.branch}"></td>
+                <td th:text="${faculty.designation}"></td>
+                <td>
+                    <a th:href="@{/viewFaculty/{id}(id=${faculty.id})}">View</a>
+                    <a th:href="@{/editFaculty/{id}(id=${faculty.id})}">Edit</a>
+                    <a th:href="@{/deleteFaculty/{id}(id=${faculty.id})}"
+                        onclick="return confirm('Are you sure you want to delete this faculty member?')">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a th:href="@{/newFaculty}" class="add-link">Add New Faculty</a>
+</body>
+
+</html>
